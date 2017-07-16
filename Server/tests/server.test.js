@@ -78,6 +78,7 @@ describe('GET /todos/:id', () => {
 	});
 
 	it('should return 404 if todo is not found', (done) => {
+		// Create new ID that won't match one of the premade ones.
 		var hexId = new ObjectID().toHexString();
 		request(app)
 			.get(`/todos/${hexId}`)
